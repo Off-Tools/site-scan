@@ -94,29 +94,65 @@
 			<footer id="footer">
 				<div class="inner">
 
-					<h3>Get in touch</h3>
+					<h3>Junte-se ao OFF-Tools</h3>
 
 					<form action="{% url 'home' %}" method="post">
 						{% csrf_token %}
 						<div class="field half first">
-							<label for="name">Name</label>
-							<input name="name" id="name" type="text" placeholder="Name">
+							<label for="name">Nome</label>
+							<input name="name" id="name" type="text" placeholder="Informe seu Nome:">
 						</div>
 						<div class="field half">
+							<label for="github">Usuário do GitHub</label>
+							<input name="github" id="github" type="text" placeholder="Informe seu usuário do GitHub:">
+						</div>
+						<div class="field half first">
 							<label for="email">Email</label>
-							<input name="email" id="email" type="email" placeholder="Email">
+							<input name="email" id="email" type="email" placeholder="Informe seu e-mail:">
+						</div>
+						<div class="field half">
+							<label for="uf">Estado</label>
+							<select name="uf" id="uf">
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará </option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
 						</div>
 						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+							<label for="message">Mensagem</label>
+							<textarea name="message" id="message" rows="6" placeholder="Fale um pouco sobre Você!"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
+							<li><input value="Contribuir com o Projeto" class="button alt" type="submit"></li>
 						</ul>
 					</form>
 
 					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						&copy; Por <a href="https://github.com/Off-Tools/">OFF-Tools</a>.
 					</div>
 
 				</div>
