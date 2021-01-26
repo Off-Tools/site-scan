@@ -1,1 +1,1 @@
-web: gunicorn off_tools_project --log-file -
+web: gunicorn off_tools_project.wsgi --log-file -
