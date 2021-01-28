@@ -1974,11 +1974,11 @@
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: #6cc091;
+		background: #fff;
 		border-radius: 10px;
 		border: none;
-		border: solid 2px #8dcca9;
-		color: #fff;
+		border: solid 2px #fff;
+		color: #000000;
 		display: block;
 		outline: 0;
 		padding: 0 1em;
@@ -2105,7 +2105,7 @@
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
 			background: #6cc091;
-			border-color: #6cc091;
+			border-color: #fff;
 			color: #ffffff;
 			content: '\f00c';
 		}
@@ -3111,7 +3111,7 @@
 
 	#footer {
 		padding: 6em 0;
-		background: #6cc091;
+		background: #2F4F4F;
 		color: #fff;
 		text-align: center;
 	}
