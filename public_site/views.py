@@ -12,3 +12,7 @@ def home(request, template_name="index.html"):
         redirect('home/')
 
     return render(request, template_name)
+
+def scanner(request, template_name="scanner.html"):
+    return render(request, template_name)
+

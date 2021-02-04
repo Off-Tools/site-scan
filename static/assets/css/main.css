@@ -1967,6 +1967,7 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="url"],
 	input[type="tel"],
 	select,
 	textarea {
@@ -1989,6 +1990,7 @@
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
+		input[type="url"]:invalid,
 		input[type="tel"]:invalid,
 		select:invalid,
 		textarea:invalid {
@@ -1998,6 +2000,7 @@
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
+		input[type="url"]:focus,
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
@@ -2041,6 +2044,7 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="url"],
 	select {
 		height: 2.75em;
 	}
