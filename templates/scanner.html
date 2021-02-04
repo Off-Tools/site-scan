@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <title>SSRF Scanner</title>
+</head>
+<body>
+    <header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><strong>OFF</strong> Tools</a>
+					<nav id="nav">
+						<a href="{% url 'home' %}">Pagina Inicial</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Scanner de SSRF</h1>
+					</header>
+
+					<div class="flex ">
+
+						<div class="field half first">
+							<label for="url">Email</label>
+							<input name="url" id="url" type="text" placeholder="Informe a URL:">
+						</div>
+						<a href="#" class="button">Submit</a>
+
+					</div>
+					<footer>
+						<textarea></textarea>
+					</footer>
+				</div>
+			</section>
+
+            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
