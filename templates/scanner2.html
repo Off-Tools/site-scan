@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" data-href-template="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+  <title>Title</title>
+</head>
+<body>
+<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><strong>OFF</strong> Tools</a>
+					<nav id="nav">
+						<a href="#filosofia">Filosofia</a>
+						<a href="{% url 'scanner' %}">Ferramentas</a>
+						<a href="#team">Sobre Nós</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>OFF-Tools</h1>
+					</header>
+                    <form action="{% url 'scanning' %}" method="post">
+                        {% csrf_token %}
+                        <div class="flex">
+
+                                <div class="">
+                                    <span class="icon fa-crosshairs"></span>
+                                    <input type="text" name="domino_alvo" class="form-control" placeholder="Digite o dominio do alvo">
+                                </div>
+                        </div>
+
+                        <footer>
+                            <p>
+                                <button type="submit" class="button btn btn-primary">Scan!</button>
+                            </p>
+                        </footer>
+                    </form>
+				</div>
+			</section>
+
+
+		<!-- Three -->
+		<a name="team"></a>
+			<section id="three" class="wrapper align-center">
+				<div class="inner">
+					<div class="flex flex-2">
+                        {% if urls %}
+						<article>
+							<div class="image round">
+								<img src="{% static 'images/pic02.jpg'%}" alt="Pic 02" />
+							</div>
+							<header>
+								<h3>URLs</h3>
+                                <h6>Urls encontradas como link na pagina da URL alvo:</h6>
+							</header>
+							<table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">URL</th>
+                                  <th scope="col">SSRF</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for url in urls %}
+                                <tr>
+                                  <td>{{ url }}</td>
+                                  <td></td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+						</article>
+                    {% endif %}
+                        {{ mensagem }}
+					</div>
+				</div>
+			</section>
+</body>
+</html>

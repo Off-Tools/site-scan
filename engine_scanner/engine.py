@@ -24,4 +24,4 @@ class Engine:
 
 if __name__ == "__main__":
     engine = Engine('https://gatefy.com')
-    engine.crawler()
+    print(engine.get_urls())
