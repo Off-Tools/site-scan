@@ -22,5 +22,6 @@ def scanning(request):
     if request.method == "POST":
         engine = Engine(str(request.POST['domino_alvo']))
         urls = engine.get_urls()
+        print(engine.check_ssrf(urls))
         print(type(urls))
         return render(request, "scanner2.html", {'urls': urls})

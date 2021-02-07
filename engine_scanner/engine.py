@@ -1,9 +1,12 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+#import payload
+from engine_scanner.payload import payload_list
+payload = payload_list
 class Engine:
-
-    def __init__(self, url):
+    def __init__(
+self, url):
         self.url = url
         self.header = {
             'Access-Control-Allow-Origin': '*',
@@ -19,7 +22,26 @@ class Engine:
         soup = BeautifulSoup(req.content, 'html.parser')
         links = soup.find_all("a", href=True)
         urls = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', str(links))
+        #print(urls)
         return urls
+
+    def check_ssrf(self, urls):
+        dicionario_resultado = {}
+        list_urls = list(urls)
+
+        contador_url = 0
+        for url in urls:
+            for i in payload:
+                #print(i)
+                get_injection =requests.get(url, params= i)
+                #if get_injection.status_code == 200:
+                dicionario_resultado = {list_urls[contador_url] : get_injection.status_code}
+                #dicionario_resultado[list_urls[contador_url]] = get_injection.status_code
+            contador_url = contador_url + 1
+        return dicionario_resultado
+
+
+
 
 
 if __name__ == "__main__":
