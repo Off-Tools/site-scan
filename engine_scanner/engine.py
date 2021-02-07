@@ -31,12 +31,10 @@ self, url):
 
         contador_url = 0
         for url in urls:
-            for i in payload:
-                #print(i)
-                get_injection =requests.get(url, params= i)
-                #if get_injection.status_code == 200:
-                dicionario_resultado = {list_urls[contador_url] : get_injection.status_code}
-                #dicionario_resultado[list_urls[contador_url]] = get_injection.status_code
+            for param in payload:
+                get_injection = requests.get(url, params= param)
+                if get_injection.status_code == 200:
+                    dicionario_resultado[list_urls[contador_url]] = get_injection.status_code
             contador_url = contador_url + 1
         return dicionario_resultado
 
@@ -45,5 +43,6 @@ self, url):
 
 
 if __name__ == "__main__":
-    engine = Engine('https://gatefy.com')
+    engine = Engine('https://www.google.com.br/')
     print(engine.get_urls())
+    print(engine.check_ssrf(engine.get_urls()))

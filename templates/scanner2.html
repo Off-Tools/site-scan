@@ -52,7 +52,7 @@
 			<section id="three" class="wrapper align-center">
 				<div class="inner">
 					<div class="flex flex-2">
-                        {% if urls %}
+                        {% if ssrfUrls %}
 						<article>
 							<div class="image round">
 								<img src="{% static 'images/pic02.jpg'%}" alt="Pic 02" />
@@ -69,10 +69,10 @@
                                 </tr>
                               </thead>
                               <tbody>
-                              {% for url in urls %}
+                              {% for key, value in ssrfUrls.items %}
                                 <tr>
-                                  <td>{{ url }}</td>
-                                  <td></td>
+                                  <td>{{ key }}</td>
+                                  <td>{{ value }}</td>
                                 </tr>
                               {% endfor %}
                               </tbody>
