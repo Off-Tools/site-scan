@@ -19,28 +19,24 @@ self, url):
     def get_urls(self):
 
         req = requests.get(self.url, self.header)
-        soup = BeautifulSoup(req.content, 'html.parser')
-        links = soup.find_all("a", href=True)
-        urls = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', str(links))
-        #print(urls)
+        # debuging..
+        # arq = open('engine_scanner/response.txt', 'w', encoding='utf8')
+        # arq.write(req.text)
+
+        urls = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', str(req.text))
+        print(urls)
         return urls
+
 
     def check_ssrf(self, urls):
         dicionario_resultado = {}
-        list_urls = list(urls)
 
-        contador_url = 0
         for url in urls:
             for param in payload:
                 get_injection = requests.get(url, params= param)
-                if get_injection.status_code == 200:
-                    dicionario_resultado[list_urls[contador_url]] = get_injection.status_code
-            contador_url = contador_url + 1
+
+                dicionario_resultado[url] = get_injection.status_code
         return dicionario_resultado
-
-
-
-
 
 if __name__ == "__main__":
     engine = Engine('https://www.google.com.br/')

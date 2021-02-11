@@ -3,7 +3,7 @@
 #entrada:/path=
 #entrada:/src=
 
-payload_list = ["http://127.0.0.1:8080"]
+payload_list = ["http://127.0.0.1:8080", "http://localhost:8080"]
 
 '''
 payload_list = ["http://127.0.0.1:port", "http://localhost:port", "https://127.0.0.1:port", "https://localhost:port", "http://[::]:port", "http://0000::1:port",
